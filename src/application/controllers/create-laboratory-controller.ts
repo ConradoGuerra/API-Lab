@@ -7,10 +7,10 @@ export class CreateLaboratoryController {
     this.createLaboratoryUseCase = createLaboratoryUseCase
   }
 
-  async handle (resquest: Request, response: Response): Promise<Response> {
-    const { name, address, status } = resquest.body
+  async handle (request: Request, response: Response): Promise<Response> {
+    const { name, address, status } = request.body
     try {
-      await this.createLaboratoryUseCase.create({ name, address, status })
+      await this.createLaboratoryUseCase.create(name, address, status)
       return response.status(201).json({ message: 'Deu bao' })
     } catch {
       throw new Error('deu merda')

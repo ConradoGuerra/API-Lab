@@ -1,6 +1,6 @@
 import { LaboratoryRepository } from '../ports/laboratory-repository'
 // import { Laboratory } from '../../entities/laboratory'
-import { LaboratoryData } from 'src/entities/laboratoryData'
+// import { LaboratoryData } from 'src/entities/laboratoryData'
 
 export class CreateLaboratoryUseCase {
     // Pegando a interface (modelo) dos dados do laboratório
@@ -14,8 +14,8 @@ export class CreateLaboratoryUseCase {
     }
 
     // Função de create genérica
-    async create (laboratoryData: LaboratoryData) {
+    async create (name: string, address: string, status: number) {
       //   Chamando a criação do lab repository
-      await this.laboratoryRepository.create(laboratoryData)
+      await this.laboratoryRepository.create(name, address, status)
     }
 }
