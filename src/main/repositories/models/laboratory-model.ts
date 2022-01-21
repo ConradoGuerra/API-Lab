@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize'
 import { sequelize } from '../helpers/sqlite-helper'
-import { LaboratoryData } from '../../../entities/laboratoryData'
+import { LaboratoryData } from '../../../entities/laboratory-data'
 
 export class Laboratory extends Model<LaboratoryData> {}
 

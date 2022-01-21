@@ -1,6 +1,5 @@
 import { Request, Response } from 'express'
-import { CreateLaboratoryUseCase } from 'src/useCases/laboratory/create-laboratory-usecase'
-
+import { CreateLaboratoryUseCase } from '../../useCases/laboratory/create-laboratory-usecase'
 export class CreateLaboratoryController {
   // Fazendo um construtor com o create do use case respeitando o próprio create
   constructor (private createLaboratoryUseCase: CreateLaboratoryUseCase) {
