@@ -34,7 +34,7 @@ _Associação_
 
 # Funcionalidades extras
 
-    - Possibilidade de executar cadastro, atualização e remoção em lote;
     - Endpoint que faz a busca por nome do exame e retorna todos os laboratórios associados a esse exame.
-    - Publicação do ambiente em um serviço cloud de hospedagens (Heroku, AWS, GCP, etc)
+    - Possibilidade de executar cadastro, atualização e remoção em lote;
     - Configurar a aplicação para rodar em um container
+    - Publicação do ambiente em um serviço cloud de hospedagens (Heroku, AWS, GCP, etc)

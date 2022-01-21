@@ -5,11 +5,12 @@ export class CreateLaboratoryUseCase implements LaboratoryRepository {
     // Pegando a interface (modelo) dos dados do laboratório
     private readonly laboratoryRepository: LaboratoryRepository
     constructor (
-      // Instanciando o meu repositório de laboratórios na variável do construtor
-      labRepo: LaboratoryRepository
+      // Criando o argumento do meu banco de dados
+      databaseRepository: LaboratoryRepository
     ) {
+      // Instanciando o meu repositório de laboratórios na variável do construtor
       // atribuindo ao this as funções do repositório
-      this.laboratoryRepository = labRepo
+      this.laboratoryRepository = databaseRepository
     }
 
     // Função de create genérica usando como requisito o laboratoryData
