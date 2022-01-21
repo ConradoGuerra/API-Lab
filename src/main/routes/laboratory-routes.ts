@@ -1,6 +1,5 @@
 import { Router } from 'express'
-import { createLaboratoryController } from '../../useCases/laboratory/index'
-// import { CreateLaboratoryController } from '../create-laboratory-controller'
+import { createLaboratoryController } from '../factories/create-laboratory'
 
 const router = Router()
 

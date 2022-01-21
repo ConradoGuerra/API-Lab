@@ -1,21 +1,20 @@
 import { LaboratoryRepository } from '../ports/laboratory-repository'
-// import { Laboratory } from '../../entities/laboratory'
-// import { LaboratoryData } from 'src/entities/laboratoryData'
+import { LaboratoryData } from 'src/entities/laboratoryData'
 
-export class CreateLaboratoryUseCase {
+export class CreateLaboratoryUseCase implements LaboratoryRepository {
     // Pegando a interface (modelo) dos dados do laboratório
     private readonly laboratoryRepository: LaboratoryRepository
     constructor (
       // Instanciando o meu repositório de laboratórios na variável do construtor
-      laboratoryRepository: LaboratoryRepository
+      labRepo: LaboratoryRepository
     ) {
       // atribuindo ao this as funções do repositório
-      this.laboratoryRepository = laboratoryRepository
+      this.laboratoryRepository = labRepo
     }
 
-    // Função de create genérica
-    async create (name: string, address: string, status: number) {
+    // Função de create genérica usando como requisito o laboratoryData
+    async create (labData: LaboratoryData): Promise<void> {
       //   Chamando a criação do lab repository
-      await this.laboratoryRepository.create(name, address, status)
+      await this.laboratoryRepository.create(labData)
     }
 }

@@ -1,8 +1,8 @@
-// import { Laboratory } from '../../entities/laboratory'
-// import { LaboratoryData } from 'src/entities/laboratoryData'
+import { LaboratoryData } from 'src/entities/laboratoryData'
 
 export interface LaboratoryRepository {
-    create: (name: string, address: string, status: number) => Promise<void>
+    // Aqui atribuimos a tipagem LaboratoryData para o Laboratorio criado respeitar essa interface
+    create: (laboratory: LaboratoryData) => Promise<void>
     // getAll: () => Promise<Laboratory[]>,
     // update: (id: number) => Promise<Laboratory>,
     // remove: (id: number) => Promise<void>
