@@ -12,9 +12,9 @@ export class CreateLaboratoryController {
     const labData = { name: request.body.name, address: request.body.address, status: request.body.status }
     try {
       await this.createLaboratoryUseCase.create(labData)
-      return response.status(201).json({ message: 'Deu bao' })
-    } catch {
-      throw new Error('deu merda')
+      return response.status(201).json({ labData })
+    } catch (err: any) {
+      return response.status(400).json({ message: err.message || 'Unexpected error.' })
     }
   }
 }

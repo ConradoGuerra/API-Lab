@@ -16,8 +16,10 @@ export class CreateLaboratoryUseCase implements LaboratoryRepository {
 
     // Função de create genérica usando como requisito o laboratoryData
     async create (labData: LaboratoryData): Promise<void> {
-      const laboratory = new Laboratory(labData.name, labData.address, labData.status)
+      const laboratory = new Laboratory()
+      // Integrando a função da entidade para a criação do laboratório
+      const createdLab = await laboratory.create(labData)
       //   Chamando a criação do lab repository
-      await this.laboratoryRepository.create(laboratory)
+      await this.laboratoryRepository.create(createdLab)
     }
 }
