@@ -8,6 +8,7 @@ import { removeLaboratoryController } from '../factories/remove-laboratory'
 import { createExamController } from '../factories/create-exam'
 import { getExamController } from '../factories/get-exam'
 import { findAndUpdateExamController } from '../factories/find-and-update-exam'
+import { removeExamController } from '../factories/remove-exam'
 
 const router = Router()
 
@@ -37,6 +38,10 @@ router.get('/exam/', (request, response) => {
 
 router.get('/exam/:examId', (request, response) => {
   return findAndUpdateExamController.handle(request, response)
+})
+
+router.delete('/exam/:examId', (request, response) => {
+  return removeExamController.remove(request, response)
 })
 
 export { router }

@@ -38,12 +38,15 @@ export class SqLiteRepository {
     }
   }
 
-  // async remove (labId: number): Promise<any> {
-  //   try {
-  //     await Laboratory.destroy({ where: { id: labId } })
-  //     return true
-  //   } catch (err: any) {
-  //     throw new Error(err)
-  //   }
-  // }
+  async remove (examId: number): Promise<any> {
+    try {
+      const deleteResult = await Exam.destroy({ where: { id: examId, status: 1 } })
+      if (deleteResult) {
+        return true
+      }
+      return false
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
 }
