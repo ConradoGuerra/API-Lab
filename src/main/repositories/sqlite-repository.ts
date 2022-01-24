@@ -15,4 +15,9 @@ export class SqLiteRepository {
     })
     return laboratoriesFound
   }
+
+  async findAndUpdate (labId: number, labData: LaboratoryData): Promise<any> {
+    const laboratory = await Laboratory.findByPk(labId)
+    return await laboratory?.update(labData)
+  }
 }

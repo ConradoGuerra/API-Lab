@@ -2,7 +2,7 @@
 
 **Laboratório**
     - [x]cadastrar um novo laboratório;
-    - obter uma lista de laboratórios ativos;
+    - [x]obter uma lista de laboratórios ativos;
     - atualizar um laboratório existente;
     - remover logicamente um laboratório ativo.
 
