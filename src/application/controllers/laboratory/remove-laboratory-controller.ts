@@ -11,8 +11,11 @@ export class RemoveLaboratoryController {
   async remove (request: Request, response: Response): Promise<Response> {
     try {
       const labId = request.params.labId
-      await this.removeLaboratoryUseCase.remove(labId)
-      return response.status(200).json({ message: 'Laboratory deleted successfully.' })
+      const deleteResult: any = await this.removeLaboratoryUseCase.remove(labId)
+      if (deleteResult) {
+        return response.status(200).json({ message: 'Laboratory deleted successfully.' })
+      }
+      return response.status(400).json({ message: 'Could delete an inactive laboratory.' })
     } catch (err: any) {
       return response.status(400).json({ message: err.message || 'Unexpected error.' })
     }

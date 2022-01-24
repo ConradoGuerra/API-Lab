@@ -35,8 +35,11 @@ export class SqLiteRepository {
 
   async remove (labId: number): Promise<any> {
     try {
-      await Laboratory.destroy({ where: { id: labId } })
-      return true
+      const deleteResult = await Laboratory.destroy({ where: { id: labId, status: 1 } })
+      if (deleteResult) {
+        return true
+      }
+      return false
     } catch (err: any) {
       throw new Error(err)
     }

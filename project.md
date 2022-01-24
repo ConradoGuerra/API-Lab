@@ -8,9 +8,9 @@
 
 **Exames**
     - [x]cadastrar um novo exame;
-    - obter uma lista de exames ativos;
-    - atualizar um exame existente;
-    - remover logicamente um exame ativo.
+    - [x]obter uma lista de exames ativos;
+    - [x]atualizar um exame existente;
+    - [x]remover logicamente um exame ativo.
 
 _Associação_
     - associar um exame ativo à um laboratório ativo;
