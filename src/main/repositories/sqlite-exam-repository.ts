@@ -6,7 +6,7 @@ import Laboratory from './models/laboratory-model'
 export class SqLiteRepository {
   async create (examData: ExamData): Promise<void> {
     try {
-      const laboratory = await Laboratory.findByPk(examData.laboratoryId)
+      const laboratory = await Laboratory.findAll({ where: { status: 1, id: examData.laboratoryId } })
       if (!laboratory) {
         throw new Error('Missing laboratory')
       }

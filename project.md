@@ -13,12 +13,12 @@
     - [x]remover logicamente um exame ativo.
 
 _Associação_
-    - associar um exame ativo à um laboratório ativo;
-    - desassociar um exame ativo de um laboratório ativo;
+    - [x]associar um exame ativo à um laboratório ativo;
+    - [x]desassociar um exame ativo de um laboratório ativo;
 
 **Importante:**
-    - Um exame pode estar associado a mais de um laboratório;
-    - O cadastro de um laboratório/exame é considerado ativo e recebe um `id` gerado automaticamente.
+    - [x]Um exame pode estar associado a mais de um laboratório];
+    - [x]O cadastro de um laboratório/exame é considerado ativo e recebe um `id` gerado automaticamente.
 
 # Banco de Dados
 
@@ -34,7 +34,7 @@ _Associação_
 
 # Funcionalidades extras
 
-    - Endpoint que faz a busca por nome do exame e retorna todos os laboratórios associados a esse exame.
+    - [x]Endpoint que faz a busca por nome do exame e retorna todos os laboratórios associados a esse exame.
     - Possibilidade de executar cadastro, atualização e remoção em lote;
     - Configurar a aplicação para rodar em um container
     - Publicação do ambiente em um serviço cloud de hospedagens (Heroku, AWS, GCP, etc)

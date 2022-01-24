@@ -5,6 +5,8 @@ import { getLaboratoryController } from '../factories/get-laboratory'
 import { findAndUpdateLaboratoryController } from '../factories/find-and-update-laboratory'
 import { removeLaboratoryController } from '../factories/remove-laboratory'
 
+import { getLaboratoriesByExamNameController } from '../factories/get-labs-by-exam-name'
+
 import { createExamController } from '../factories/create-exam'
 import { getExamController } from '../factories/get-exam'
 import { findAndUpdateExamController } from '../factories/find-and-update-exam'
@@ -26,6 +28,10 @@ router.get('/laboratory/:labId', (request, response) => {
 
 router.delete('/laboratory/:labId', (request, response) => {
   return removeLaboratoryController.remove(request, response)
+})
+
+router.get('/examName/:examName', (request, response) => {
+  return getLaboratoriesByExamNameController.handle(request, response)
 })
 
 router.post('/exam/createExam', (request, response) => {

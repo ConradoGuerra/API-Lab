@@ -2,6 +2,8 @@
 // import { LaboratoryRepository } from '../../useCases/ports/laboratory-repository'
 import { LaboratoryData } from '../../entities/laboratory-data'
 import { Laboratory } from './models/laboratory-model'
+import Exam from './models/exam-model'
+import { Op } from 'sequelize'
 export class SqLiteRepository {
   async create (labData: LaboratoryData): Promise<void> {
     try {
@@ -40,6 +42,30 @@ export class SqLiteRepository {
         return true
       }
       return false
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
+
+  async findByExamName (examName: string): Promise<any> {
+    try {
+      const labsFound = await Exam.findAll({
+        attributes: ['laboratory.name'],
+        include: [{
+          model: Laboratory,
+          required: true
+        }],
+        where: {
+          name: {
+            [Op.like]: `%${examName}%`
+          }
+        }
+      }).catch((err) => {
+        const error = new Error(err.original.code)
+        throw error
+      })
+
+      return labsFound
     } catch (err: any) {
       throw new Error(err)
     }
