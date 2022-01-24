@@ -7,7 +7,7 @@
     - [x]remover logicamente um laboratório ativo.
 
 **Exames**
-    - cadastrar um novo exame;
+    - [x]cadastrar um novo exame;
     - obter uma lista de exames ativos;
     - atualizar um exame existente;
     - remover logicamente um exame ativo.
@@ -28,9 +28,9 @@ _Associação_
         - [x]status [ativo, inativo]
         
    **Exame**
-        - nome
-        - tipo [analise clinica, imagem]
-        - status [ativo, inativo]
+        - [x]nome
+        - [x]tipo [analise clinica, imagem]
+        - [x]status [ativo, inativo]
 
 # Funcionalidades extras
 

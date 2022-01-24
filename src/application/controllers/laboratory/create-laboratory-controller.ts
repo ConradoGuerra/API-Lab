@@ -9,7 +9,7 @@ export class CreateLaboratoryController {
   // Criamos uma função handler para trabalhar como um controller mesmo, vai buscar os dados enviados
   // Depois vai usar o create do use case
   async handle (request: Request, response: Response): Promise<Response> {
-    const labData = { name: request.body.name, address: request.body.address, status: request.body.status }
+    const labData: { name: string, address: string, status: number } = request.body
     try {
       await this.createLaboratoryUseCase.create(labData)
       return response.status(201).json({ labData })

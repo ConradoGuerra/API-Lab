@@ -29,14 +29,14 @@ export class SqLiteRepository {
   //   }
   // }
 
-  // async findAndUpdate (labId: number, labData: ExamData): Promise<any> {
-  //   try {
-  //     const laboratory = await Laboratory.findByPk(labId)
-  //     return await laboratory?.update(labData)
-  //   } catch (err: any) {
-  //     throw new Error(err)
-  //   }
-  // }
+  async findAndUpdate (examId: number, examData: ExamData): Promise<any> {
+    try {
+      const exam = await Exam.findByPk(examId)
+      return await exam?.update(examData)
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
 
   // async remove (labId: number): Promise<any> {
   //   try {
