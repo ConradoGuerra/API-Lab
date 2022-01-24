@@ -1,6 +1,5 @@
 import { LaboratoryData } from './laboratory-data'
-import { MissingParamError } from '../../__tests__/unity/laboratory/create-laboratory.spec'
-
+import { MissingParamError } from '../utils/errors/missing-param-error'
 export class Laboratory {
   async create (laboratoryData: LaboratoryData) {
     if (!laboratoryData.name) {
