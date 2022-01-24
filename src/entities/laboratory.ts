@@ -1,12 +1,17 @@
-export class Laboratory {
-    public readonly id?: number
-    public readonly name: string
-    public readonly address: string
-    public readonly status: number
+import { LaboratoryData } from './laboratory-data'
+import { MissingParamError } from '../../__tests__/unity/laboratory/create-laboratory.spec'
 
-    constructor (name: string, address: string, status: number) {
-      this.name = name
-      this.address = address
-      this.status = status
+export class Laboratory {
+  async create (laboratoryData: LaboratoryData) {
+    if (!laboratoryData.name) {
+      throw new MissingParamError('name')
     }
+    if (!laboratoryData.address) {
+      throw new MissingParamError('address')
+    }
+    if (laboratoryData.status !== 1 && laboratoryData.status !== 0) {
+      throw new MissingParamError('status')
+    }
+    return laboratoryData
+  }
 }
