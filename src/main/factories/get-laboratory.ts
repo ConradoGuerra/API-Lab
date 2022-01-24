@@ -1,5 +1,5 @@
-import { SqLiteRepository } from '../../main/repositories/sqlite-repository'
-import { GetLaboratoryController } from '../../application/controllers/get-laboratory-controller'
+import { SqLiteRepository } from '../repositories/sqlite-laboratory-repository'
+import { GetLaboratoryController } from '../../application/controllers/laboratory/get-laboratory-controller'
 import { GetLaboratoryUseCase } from '../../useCases/laboratory/get-laboratory-usecase'
 
 const sqliteRespository = new SqLiteRepository()

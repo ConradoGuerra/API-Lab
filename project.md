@@ -3,8 +3,8 @@
 **Laboratório**
     - [x]cadastrar um novo laboratório;
     - [x]obter uma lista de laboratórios ativos;
-    - atualizar um laboratório existente;
-    - remover logicamente um laboratório ativo.
+    - [x]atualizar um laboratório existente;
+    - [x]remover logicamente um laboratório ativo.
 
 **Exames**
     - cadastrar um novo exame;
