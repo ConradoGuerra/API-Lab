@@ -6,6 +6,7 @@ import { findAndUpdateLaboratoryController } from '../factories/find-and-update-
 import { removeLaboratoryController } from '../factories/remove-laboratory'
 
 import { createExamController } from '../factories/create-exam'
+import { getExamController } from '../factories/get-exam'
 import { findAndUpdateExamController } from '../factories/find-and-update-exam'
 
 const router = Router()
@@ -28,6 +29,10 @@ router.delete('/laboratory/:labId', (request, response) => {
 
 router.post('/exam/createExam', (request, response) => {
   return createExamController.handle(request, response)
+})
+
+router.get('/exam/', (request, response) => {
+  return getExamController.handle(request, response)
 })
 
 router.get('/exam/:examId', (request, response) => {

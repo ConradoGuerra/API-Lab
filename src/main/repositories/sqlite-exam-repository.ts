@@ -16,18 +16,18 @@ export class SqLiteRepository {
     }
   }
 
-  // async findAll (): Promise<any> {
-  //   try {
-  //     const laboratoriesFound = await Laboratory.findAll({
-  //       where: {
-  //         status: 1
-  //       }
-  //     })
-  //     return laboratoriesFound
-  //   } catch (err: any) {
-  //     throw new Error(err)
-  //   }
-  // }
+  async findAll (): Promise<any> {
+    try {
+      const examsFound = await Exam.findAll({
+        where: {
+          status: 1
+        }
+      })
+      return examsFound
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
 
   async findAndUpdate (examId: number, examData: ExamData): Promise<any> {
     try {
