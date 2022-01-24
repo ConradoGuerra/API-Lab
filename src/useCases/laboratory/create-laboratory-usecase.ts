@@ -2,7 +2,7 @@ import { LaboratoryRepository } from '../ports/laboratory-repository'
 import { LaboratoryData } from '../../entities/laboratory-data'
 import { Laboratory } from '../../entities/laboratory'
 
-export class CreateLaboratoryUseCase implements LaboratoryRepository {
+export class CreateLaboratoryUseCase {
     // Pegando a interface (modelo) dos dados do laboratório
     private readonly laboratoryRepository: LaboratoryRepository
     constructor (
