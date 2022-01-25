@@ -16,7 +16,7 @@ export class BulkUpdateLaboratoryController {
       }
       return response.status(400).json({ message: 'Could update an inactive laboratory.' })
     } catch (err: any) {
-      return response.status(400).json({ message: err.message || 'Unexpected error.' })
+      return response.status(500).json({ message: err.message || 'Unexpected error.' })
     }
   }
 }

@@ -10,7 +10,7 @@ export class GetExamController {
       const exams = await this.getExamUseCase.execute()
       return response.status(200).json({ exams })
     } catch (err: any) {
-      return response.status(400).json({ message: err.message || 'Unexpected error.' })
+      return response.status(404).json({ message: err.message || 'Exam doesnt exist.' })
     }
   }
 }

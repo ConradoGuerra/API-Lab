@@ -12,7 +12,7 @@ export class FindAndUpdateExamController {
       const exams = await this.findAndUpdateExamUseCase.execute(examId, examData)
       return response.status(200).json({ exams })
     } catch (err: any) {
-      return response.status(400).json({ message: err.message || 'Unexpected error.' })
+      return response.status(401).json({ message: err.message || 'No exam found.' })
     }
   }
 }

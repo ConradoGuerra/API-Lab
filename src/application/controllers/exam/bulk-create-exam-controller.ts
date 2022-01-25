@@ -12,7 +12,7 @@ export class BulkCreateExamController {
       await this.bulkCreateExamUseCase.bulkCreate(examsData)
       return response.status(201).json({ examsData })
     } catch (err: any) {
-      return response.status(400).json({ message: err.message || 'Unexpected error.' })
+      return response.status(500).json({ message: err.message || 'Unexpected error.' })
     }
   }
 }
