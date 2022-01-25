@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/main/server.ts",
+  "engines": {
+    "node": "14.17.3"
+  },
   "scripts": {
     "start": "tsnd --respawn --transpile-only ./src/main/server.ts",
     "test": "jest --watchAll"
