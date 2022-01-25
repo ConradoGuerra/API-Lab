@@ -11,8 +11,7 @@ export class FindAndUpdateLaboratoryController {
   async handle (request: Request, response: Response): Promise<Response> {
     try {
       const labId = request.params.labId
-      const { name, address, status } = request.body
-      const labData = { name, address, status }
+      const labData: { name: string, address: string, status: number } = request.body
 
       const laboratories = await this.findAndUpdateLaboratoryUseCase.execute(labId, labData)
       return response.status(200).json({ laboratories })

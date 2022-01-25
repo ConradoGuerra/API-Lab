@@ -12,6 +12,10 @@ import { getExamController } from '../factories/get-exam'
 import { findAndUpdateExamController } from '../factories/find-and-update-exam'
 import { removeExamController } from '../factories/remove-exam'
 
+import { bulkCreateLaboratoryController } from '../factories/bulk-create-laboratory'
+import { bulkUpdateLaboratoryController } from '../factories/bulk-update-laboratory'
+import { bulkCreateExamController } from '../factories/bulk-create-exam'
+
 const router = Router()
 
 router.post('/laboratory/', (request, response) => {
@@ -48,6 +52,18 @@ router.get('/exam/:examId', (request, response) => {
 
 router.delete('/exam/:examId', (request, response) => {
   return removeExamController.remove(request, response)
+})
+
+router.post('/bulkLaboratory/', (request, response) => {
+  return bulkCreateLaboratoryController.handle(request, response)
+})
+
+router.patch('/bulkLaboratory/:labName', (request, response) => {
+  return bulkUpdateLaboratoryController.handle(request, response)
+})
+
+router.post('/bulkExam/', (request, response) => {
+  return bulkCreateExamController.handle(request, response)
 })
 
 export { router }

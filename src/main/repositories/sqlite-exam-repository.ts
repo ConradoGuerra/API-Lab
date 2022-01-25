@@ -49,4 +49,12 @@ export class SqLiteRepository {
       throw new Error(err)
     }
   }
+
+  async bulkCreate (exams: []): Promise<any> {
+    try {
+      await Exam.bulkCreate(exams)
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
 }

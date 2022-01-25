@@ -6,5 +6,6 @@ export interface ExamRepository {
     findAll: () => Promise<any>;
     findAndUpdate: (id: number, examData: ExamData) => Promise<void>;
     remove: (id: number) => Promise<void>;
+    bulkCreate: (exams: []) => Promise<[]>;
 
 }

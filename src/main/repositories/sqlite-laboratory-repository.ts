@@ -70,4 +70,30 @@ export class SqLiteRepository {
       throw new Error(err)
     }
   }
+
+  async bulkCreate (laboratories: []): Promise<any> {
+    try {
+      await Laboratory.bulkCreate(laboratories)
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
+
+  async bulkUpdate (labName: string, labData: any): Promise<any> {
+    try {
+      const [result] = await Laboratory.update({ name: labData.name, address: labData.address, status: labData.status }, {
+        where: {
+          name: {
+            [Op.like]: `%${labName}%`
+          }
+        }
+      })
+      if (result) {
+        return true
+      }
+      return false
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
 }

@@ -15,7 +15,7 @@ export class RemoveLaboratoryController {
       if (deleteResult) {
         return response.status(200).json({ message: 'Laboratory deleted successfully.' })
       }
-      return response.status(400).json({ message: 'Could delete an inactive laboratory.' })
+      return response.status(400).json({ message: 'Could not delete an inactive laboratory.' })
     } catch (err: any) {
       return response.status(400).json({ message: err.message || 'Unexpected error.' })
     }

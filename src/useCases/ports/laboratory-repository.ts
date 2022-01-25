@@ -5,6 +5,8 @@ export interface LaboratoryRepository {
     findAll: () => Promise<any>;
     findAndUpdate: (id: number, laboratoryData: LaboratoryData) => Promise<void>;
     remove: (id: number) => Promise<void>;
-    findByExamName: (examName: string) => Promise<[]>
+    findByExamName: (examName: string) => Promise<[]>;
+    bulkCreate: (laboratories: []) => Promise<[]>;
+    bulkUpdate: (labName: string, laboratories: any) => Promise<[]>;
 
 }
