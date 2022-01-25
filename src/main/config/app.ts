@@ -22,6 +22,10 @@ app.use((error: any, req: any, res: any, next: any) => {
   res.status(status).json({ message: message, data: data })
 })
 
+app.use('/', (req, res, next) => {
+  res.send('<h1>API de Laboratórios e Exames</h1>')
+  next()
+})
 app.use(router)
 
 export default app
