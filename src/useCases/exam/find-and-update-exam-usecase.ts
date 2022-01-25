@@ -2,7 +2,6 @@ import { ExamData } from '../../entities/exam-data'
 import { ExamRepository } from '../ports/exam-repository'
 import { Exam } from '../../entities/exam'
 export class FindAndUpdateExamUseCase {
-    // Criando um repositório do banco para buscar a função requerida para o usecase
     private databaseRepository: ExamRepository
     constructor (
       databaseRepository: ExamRepository

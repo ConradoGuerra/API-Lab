@@ -3,7 +3,6 @@ import { Laboratory } from '../../entities/laboratory'
 import { LaboratoryRepository } from '../ports/laboratory-repository'
 
 export class FindAndUpdateLaboratoryUseCase {
-    // Criando um repositório do banco para buscar a função requerida para o usecase
     private databaseRepository: LaboratoryRepository
     constructor (
       databaseRepository: LaboratoryRepository
