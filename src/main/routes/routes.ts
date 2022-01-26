@@ -26,7 +26,7 @@ router.get('/laboratory/', (request, response) => {
   return getLaboratoryController.handle(request, response)
 })
 
-router.get('/laboratory/:labId', (request, response) => {
+router.patch('/laboratory/:labId', (request, response) => {
   return findAndUpdateLaboratoryController.handle(request, response)
 })
 
@@ -38,7 +38,7 @@ router.get('/examName/:examName', (request, response) => {
   return getLaboratoriesByExamNameController.handle(request, response)
 })
 
-router.post('/exam/createExam', (request, response) => {
+router.post('/exam/', (request, response) => {
   return createExamController.handle(request, response)
 })
 
@@ -46,7 +46,7 @@ router.get('/exam/', (request, response) => {
   return getExamController.handle(request, response)
 })
 
-router.get('/exam/:examId', (request, response) => {
+router.patch('/exam/:examId', (request, response) => {
   return findAndUpdateExamController.handle(request, response)
 })
 
