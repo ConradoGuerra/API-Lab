@@ -15,6 +15,6 @@ export class Exam {
     if (!examData.laboratoryId) {
       throw new MissingParamError('laboratory')
     }
-    return examData
+    return { ...examData, name: examData.name.trim() }
   }
 }

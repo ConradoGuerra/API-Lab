@@ -8,8 +8,8 @@ export class CreateLaboratoryController {
   async handle (request: Request, response: Response): Promise<Response> {
     const labData: { name: string, address: string, status: number } = request.body
     try {
-      await this.createLaboratoryUseCase.create(labData)
-      return response.status(201).json({ labData })
+      const createdLab = await this.createLaboratoryUseCase.create(labData)
+      return response.status(201).json({ createdLab })
     } catch (err: any) {
       return response.status(400).json({ message: err.message || 'Unexpected error.' })
     }

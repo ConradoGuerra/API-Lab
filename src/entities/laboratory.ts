@@ -11,6 +11,10 @@ export class Laboratory {
     if (laboratoryData.status !== 1 && laboratoryData.status !== 0) {
       throw new MissingParamError('status')
     }
-    return laboratoryData
+    return {
+      ...laboratoryData,
+      name: laboratoryData.name.trim(),
+      address: laboratoryData.address.trim()
+    }
   }
 }

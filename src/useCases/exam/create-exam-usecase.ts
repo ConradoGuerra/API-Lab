@@ -13,6 +13,6 @@ export class CreateExamUseCase {
     async create (ExamData: ExamData): Promise<void> {
       const exam = new Exam()
       const createdExam = await exam.create(ExamData)
-      await this.examRepository.create(createdExam)
+      return await this.examRepository.create(createdExam)
     }
 }

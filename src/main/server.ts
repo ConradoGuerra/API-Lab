@@ -1,5 +1,6 @@
 import app from './config/app'
 import { sequelize } from './repositories/helpers/sqlite-helper'
+import 'dotenv/config'
 
 sequelize
   .sync()

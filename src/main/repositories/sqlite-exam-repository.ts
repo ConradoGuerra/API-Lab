@@ -10,7 +10,8 @@ export class SqLiteRepository {
       if (!laboratory) {
         throw new Error('Missing laboratory')
       }
-      await Exam.create(examData)
+      const createdExam: any = await Exam.create(examData)
+      return createdExam
     } catch (err: any) {
       throw new Error(err)
     }

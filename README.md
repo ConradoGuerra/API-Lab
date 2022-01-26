@@ -68,8 +68,11 @@ Tecnologias
 
 As tecnologias utilizadas para o projeto foram:
 - Node.Js
+- Typescript
 - Express
-- Nodemon
 - Jest
 - Sequelize
 - Sqlite3
+- Docker
+- Eslint
+- Dotenv

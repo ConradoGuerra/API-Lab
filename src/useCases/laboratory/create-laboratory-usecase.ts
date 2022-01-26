@@ -12,6 +12,6 @@ export class CreateLaboratoryUseCase {
     async create (labData: LaboratoryData): Promise<void> {
       const laboratory = new Laboratory()
       const createdLab = await laboratory.create(labData)
-      await this.laboratoryRepository.create(createdLab)
+      return await this.laboratoryRepository.create(createdLab)
     }
 }

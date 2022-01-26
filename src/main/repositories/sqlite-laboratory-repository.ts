@@ -7,7 +7,8 @@ import { Op } from 'sequelize'
 export class SqLiteRepository {
   async create (labData: LaboratoryData): Promise<void> {
     try {
-      await Laboratory.create(labData)
+      const createdLab:any = await Laboratory.create(labData)
+      return createdLab
     } catch (err: any) {
       throw new Error(err)
     }

@@ -16,6 +16,7 @@ Laboratory.init({
   },
   address: {
     type: DataTypes.STRING,
+    unique: true,
     allowNull: false
   },
   status: {
