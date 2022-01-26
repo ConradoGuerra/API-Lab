@@ -1,1 +1,0 @@
-web: ./src/main/server.ts

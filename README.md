@@ -57,17 +57,19 @@ Testes
 Para testar:
 - $ npm test
 
+Inicialização
+=============
+
+Para inicializar a API:
+- docker-compose up
+
 Tecnologias
 ===========
 
 As tecnologias utilizadas para o projeto foram:
 - Node.Js
-- Yarn
 - Express
 - Nodemon
 - Jest
-- Supertest
-- Dotenv
 - Sequelize
 - Sqlite3
-- Express-validator
